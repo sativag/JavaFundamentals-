@@ -1,4 +1,5 @@
 package com.fundamentals.java;
+import java.util.Scanner;
 
 /*
  public - Access Modifier
@@ -9,9 +10,11 @@ public class WelcomeToJava {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	someMethod();
-	stringExamples();
-	moreStringExamples();
+	//someMethod();
+	//stringExamples();
+	//moreStringExamples();
+	// primitiveExamples();
+		scannerExample(); 
 			
 	}
 
@@ -54,6 +57,34 @@ public class WelcomeToJava {
 		// contains method checks to see if it matches part of the variable
 		boolean isContained = myString.contains("ava");
 		System.out.println(isContained);
+	}
+	
+	public static void primitiveExamples() {
+		PrimitiveExamples pe = new PrimitiveExamples();
+		pe.myFirstPrimitiveMethod();
+		pe.myAddition();
+		pe.mySubtraction();
+		pe.myMultiplication();
+		pe.myDivision();
+		pe.myModulus();
+		pe.myOrderOp();
+	}
+	
+	
+	// Example of the use of Scanner
+	public static void scannerExample() {
+		int x, y, z;
+		System.out.println("Enter two integers to calculate their sum");
+		Scanner in = new Scanner(System.in);
+		x = in.nextInt();
+		y = in.nextInt();
+		z = x + y;
+		System.out.println("Sum of entered integers = " + z);
+	
+		
+		
+		
+		
 	}
 	
 }
