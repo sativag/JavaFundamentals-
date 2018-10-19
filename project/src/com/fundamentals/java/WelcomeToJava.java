@@ -17,8 +17,30 @@ public class WelcomeToJava {
 		// primitiveExamples();
 		// scannerExample();
 		// myOperatorExample();
-		myAssignmentExample();
+		// myAssignmentExample();
+		//myDecisionExample();
+		mySongExample();
 
+	}
+	
+	public static void mySongExample() {
+		SongExamples se = new SongExamples();
+		String beer = se.bottlesOfBeer();
+		System.out.println(beer);
+	}
+
+	
+	public static void myDecisionExample() {
+		DecisionExamples de = new DecisionExamples();
+		de.basicIfStatement();
+		de.chainIfStatement();
+		de.switchExample(5);
+		
+		LoopingExamples le = new LoopingExamples();
+		le.myWhileLoop();
+		le.myDoWhileLoop();
+		le.myForLoop();
+		le.myBranchExample();
 	}
 	
 	public static void myAssignmentExample() {
