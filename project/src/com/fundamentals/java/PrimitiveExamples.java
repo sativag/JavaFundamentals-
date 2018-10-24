@@ -33,6 +33,21 @@ public class PrimitiveExamples {
 	int ab = 10;
 	int cd = 24;
 	
+	private String myString = "My Private String";
+	
+	private void myPrivateMethod() {
+		System.out.println("This is private.... Stay out");
+	}
+	
+	public void myPublicMethod() {
+		System.out.println("This is public");
+		myPrivateMethod(); 
+	}
+	
+	protected void myProtectedMethod() {
+		System.out.println("This is protected");
+	}
+	
 	// Method changes instance value from 34678 to 3400 after it displays in the printLn
 	public void myFirstPrimitiveMethod() {
 		System.out.println(myInt);

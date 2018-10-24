@@ -1,6 +1,7 @@
 package com.fundamentals.java;
 
 import java.util.Scanner;
+import com.fundamentals.data.*;
 
 /*
  public - Access Modifier
@@ -24,7 +25,14 @@ public class WelcomeToJava {
 		//myCat();
 		//sampleArray();
 		//myTwoDimensionArray();
-		myJaggedArray();
+		//myJaggedArray();
+		accessModifierExamples();
+	}
+	
+	public static void accessModifierExamples() {
+		PrimitiveExamples pe = new PrimitiveExamples();
+		Apple myApple = new Apple();
+		pe.myProtectedMethod();
 	}
 	
 	public static void myJaggedArray() {
