@@ -26,7 +26,19 @@ public class WelcomeToJava {
 		//sampleArray();
 		//myTwoDimensionArray();
 		//myJaggedArray();
-		accessModifierExamples();
+		//accessModifierExamples();
+		//myQuiz();
+		inheritanceExample();
+	}
+	
+	public static void inheritanceExample() {
+		House house = new House();
+		Condo condo = new Condo();
+		condo.setDoors("Red Door");
+		System.out.println(condo.getDoors());
+		house.setDoors("Purple Door");
+		System.out.println(house.getDoors());
+		
 	}
 	
 	public static void accessModifierExamples() {
@@ -59,6 +71,14 @@ public class WelcomeToJava {
 			System.out.println(anArray[i][j]);
 	        }
 		}
+	}
+	
+	public static void myQuiz() {
+		Quiz1 q = new Quiz1();
+		//q.gradeExample('e');
+		//q.oddNumbers();
+		q.evenNumbers();
+		
 	}
 	
 	public static void myTwoDimensionArray() {
@@ -109,23 +129,25 @@ public class WelcomeToJava {
 	
 	public static void myHouse() {
 		House myHouse = new House();
-		myHouse.doors = "Red Doors";
+		//myHouse.doors = "Red Doors";
+		myHouse.setDoors("Red Doors");
 		
 		House mySecondHome = new House();
-		mySecondHome.doors = "Purple Doors";
+		//mySecondHome.doors = "Purple Doors";
+		mySecondHome.setDoors("Purple Doors");
 		
 		House myThirdHome = myHouse;
 		myHouse = mySecondHome;
 		
 		House[] houseArray = new House[] {myHouse, mySecondHome, myThirdHome };
 		
-		//System.out.println(myHouse.doors);
-		//System.out.println(mySecondHome.doors);
-		//System.out.println(myThirdHome.doors);
+		System.out.println(myHouse.getDoors());
+		System.out.println(mySecondHome.getDoors());
+		System.out.println(myThirdHome.getDoors());
 		
 		int i = 0;
 		do {
-			System.out.println(houseArray[i].doors);
+			System.out.println(houseArray[i].getDoors()); 
 			i++;
 		} while(i < houseArray.length);
 	}
