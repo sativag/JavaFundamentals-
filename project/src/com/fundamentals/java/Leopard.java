@@ -10,5 +10,10 @@ public class Leopard extends Cat {
 	public String getBigPaws() {
 		return bigPaws; 
 	}
+	@Override
+	public void jump() {
+		super.jump();
+		System.out.println("The leopard jumped higher");
+	}
 	
 }

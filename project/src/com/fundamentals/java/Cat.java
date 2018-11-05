@@ -31,7 +31,7 @@ public class Cat {
 	}
 	
 	public void jump() {
-		
+		System.out.println("The cat jumped");
 	}
 	
 	public void scratch() {

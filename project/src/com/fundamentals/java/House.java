@@ -33,7 +33,7 @@ public class House {
 	}
 	
 	public void openDoor() {
-		
+		System.out.println("I opened a Steel Door");
 	}
 	
 	public void closeDoor() {

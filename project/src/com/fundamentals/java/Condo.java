@@ -10,5 +10,11 @@ public class Condo extends House {
 	public boolean getHasBalcony() {
 		return hasBalcony;
 	}
+	
+	@Override
+	public void openDoor() {
+		super.openDoor();
+		System.out.println("I opened a wooden door");
+	}
 
 }

@@ -22,13 +22,32 @@ public class WelcomeToJava {
 		//myDecisionExample();
 		//mySongExample();
 		//myHouse();
-		//myCat();
+		myCat();
 		//sampleArray();
 		//myTwoDimensionArray();
 		//myJaggedArray();
 		//accessModifierExamples();
 		//myQuiz();
-		inheritanceExample();
+		//inheritanceExample();
+		//overloadExample();
+		//overrideExample();
+	}
+	
+	public static void overrideExample() {
+		House myHouse = new House();
+		Condo myCondo = new Condo();
+		House myOtherHouse = new Condo();
+		//myHouse.openDoor();
+		//myCondo.openDoor();
+		myOtherHouse.openDoor();
+	}
+	
+	public static void overloadExample() {
+		Apple myApple = new Apple();
+		myApple.display("Granny Smiths", 5);
+		myApple.display("Sour", 3, "Red");
+		String show = myApple.display("Granny Smiths", "Green");
+		System.out.println(myApple.display("Granny Smiths", "Green"));
 	}
 	
 	public static void inheritanceExample() {
@@ -125,6 +144,9 @@ public class WelcomeToJava {
 	
 	public static void myCat() {
 		Cat myCat = new Cat();
+		//myCat.jump();
+		Leopard myLeopard = new Leopard();
+		myLeopard.jump();
 	}
 	
 	public static void myHouse() {
