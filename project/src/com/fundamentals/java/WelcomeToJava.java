@@ -9,8 +9,18 @@ import com.fundamentals.data.*;
  WelcomeToJava - Name of class
  */
 public class WelcomeToJava {
+	
+	public static final int MY_VALUE = 10;
+	public static int MY_OTHER_VALUE;
+	
+	static {
+		MY_OTHER_VALUE = 25;
+		int total = MY_VALUE * MY_OTHER_VALUE; // total should be 250
+		System.out.println(total);
+	}
 
 	public static void main(String[] args) {
+		MY_OTHER_VALUE = 35;
 		// TODO Auto-generated method stub
 		// someMethod();
 		// stringExamples();
@@ -22,7 +32,7 @@ public class WelcomeToJava {
 		//myDecisionExample();
 		//mySongExample();
 		//myHouse();
-		myCat();
+		//myCat();
 		//sampleArray();
 		//myTwoDimensionArray();
 		//myJaggedArray();
@@ -31,12 +41,23 @@ public class WelcomeToJava {
 		//inheritanceExample();
 		//overloadExample();
 		//overrideExample();
+		sampleUtility();
+		//something(); // Can not run in a static method		
+	}
+	
+	public void something() { //Will not run in a static method 
+	}
+	
+	public static void sampleUtility() {
+		System.out.println(Utility.addSomething(5, 23));
+		Utility.somethingElse();
 	}
 	
 	public static void overrideExample() {
 		House myHouse = new House();
 		Condo myCondo = new Condo();
-		House myOtherHouse = new Condo();
+		House myOtherHouse = new Condo(); //Inplicit Cast
+		Condo myOtherCondo = (Condo) new House(); //Explicit Cast
 		//myHouse.openDoor();
 		//myCondo.openDoor();
 		myOtherHouse.openDoor();
@@ -48,6 +69,11 @@ public class WelcomeToJava {
 		myApple.display("Sour", 3, "Red");
 		String show = myApple.display("Granny Smiths", "Green");
 		System.out.println(myApple.display("Granny Smiths", "Green"));
+		
+		System.out.println(Apple.SOUR_SCALE);
+		System.out.println(myApple.SOUR_SCALE);
+		System.out.println(Apple.SWEET_SCALE);
+		Apple.SWEET_SCALE = 25;
 	}
 	
 	public static void inheritanceExample() {
