@@ -41,8 +41,53 @@ public class WelcomeToJava {
 		//inheritanceExample();
 		//overloadExample();
 		//overrideExample();
-		sampleUtility();
-		//something(); // Can not run in a static method		
+		//sampleUtility();
+		//something(); // Can not run in a static method
+		//Quiz2();
+		//Dinosaur();
+		//TRex();
+		//Pterodactyl();
+		myAbstractExample();
+	}
+	
+	public static void myAbstractExample() {
+		// Cant create an instance of an Abstract class
+		//Shape shape = new Shape(); // Not valid
+		System.out.println(Shape.area(5, 10));
+		Square square = new Square();
+		System.out.println(square.draw());
+		Rectangle rec = new Rectangle();
+		System.out.println(rec.draw());
+		rec.setLength(10);
+		rec.setWidth(5);
+		System.out.println(Shape.area(rec.getLength(), rec.getWidth()));
+	}
+	
+	public static void Pterodactyl() {
+		Pterodactyl myPterodactyl = new Pterodactyl();
+		myPterodactyl.hunt();
+		myPterodactyl.makeNest();
+	}
+	
+	public static void TRex() {
+		TRex myTRex = new TRex();
+		myTRex.hunt();
+		myTRex.shortArms();
+	}
+	
+	public static void Dinosaur() {
+		Dinosaur myDinosaur = new Dinosaur();
+		myDinosaur.hunt();
+		myDinosaur.setScales("leathery");
+		myDinosaur.setSharpTeeth("Dinosaurs have sharp teeth");
+		System.out.println(myDinosaur.getScales());
+		System.out.println(myDinosaur.getSharpTeeth());
+	}
+	
+	public static void Quiz2() {
+		Quiz2 q2 = new Quiz2();
+		Quiz2.questionTwo(); // static methods call directly from object
+		System.out.println(Quiz2.mySubtraction(10, 5));
 	}
 	
 	public void something() { //Will not run in a static method 
