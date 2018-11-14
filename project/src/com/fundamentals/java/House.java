@@ -1,6 +1,6 @@
 package com.fundamentals.java;
 
-public class House {
+public class House implements HomeInterface, PlumbingInterface {
 
 	private String windows;
 	
@@ -38,5 +38,23 @@ public class House {
 	
 	public void closeDoor() {
 		
+	}
+
+	@Override
+	public void decorate() {
+		// TODO Auto-generated method stub
+		System.out.println("Decorate House");
+	}
+
+	@Override
+	public void installPlumbing() {
+		// TODO Auto-generated method stub
+		System.out.println("Installing Plumbing");
+	}
+
+	@Override
+	public void supplementWork() {
+		// TODO Auto-generated method stub
+		System.out.println("Supplement Work");
 	}
 }

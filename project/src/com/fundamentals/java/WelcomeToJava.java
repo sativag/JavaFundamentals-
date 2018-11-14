@@ -47,7 +47,17 @@ public class WelcomeToJava {
 		//Dinosaur();
 		//TRex();
 		//Pterodactyl();
-		myAbstractExample();
+		//myAbstractExample();
+	}
+	
+	public static void myInterfaceExample() {
+		House myHouse = new House();
+		Condo myCondo = new Condo();
+		
+		myHouse.decorate();
+		myHouse.installPlumbing();
+		myCondo.decorate();
+		myHouse.supplementWork();
 	}
 	
 	public static void myAbstractExample() {
