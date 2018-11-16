@@ -4,6 +4,15 @@ public class Dinosaur {
 	
 	private String scales;
 	private String sharpTeeth;
+
+	public Dinosaur(String sharpTeeth, String scales) {
+		this.sharpTeeth = sharpTeeth;
+		this.scales = scales;
+	}
+	
+	public Dinosaur(String sharpTeeth) {
+		this(sharpTeeth, "rough");
+	}
 	
 	public void setScales(String scales) {
 		this.scales = scales;

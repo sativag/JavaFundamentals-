@@ -48,20 +48,35 @@ public class WelcomeToJava {
 		//TRex();
 		//Pterodactyl();
 		//myAbstractExample();
+		//myInterfaceExample();
+		myConstructorPlusExample();
+	}
+	
+	public static void myConstructorPlusExample() {
+		GrannySmiths gs = new GrannySmiths();
+		gs.decide();
+		TRex tr = new TRex("Sharp", "Smooth");
+		System.out.println("The TRex has " +tr.getScales()+ " scales and "+tr.getSharpTeeth()+ " teeth");
 	}
 	
 	public static void myInterfaceExample() {
 		House myHouse = new House();
-		Condo myCondo = new Condo();
+		House mySummerHouse = new House("storm windows");
+		House myLogHouse = new House("wooden windows", "wooden door");
+		System.out.println(mySummerHouse.getWindows());
+		System.out.println(myLogHouse.getWindows() + " " + myLogHouse.getDoors());
 		
-		myHouse.decorate();
-		myHouse.installPlumbing();
+		Condo myCondo = new Condo("Sunny");
+	
+		
+		//myHouse.decorate();
+		//myHouse.installPlumbing();
 		myCondo.decorate();
-		myHouse.supplementWork();
+		//myHouse.supplementWork();
 	}
 	
 	public static void myAbstractExample() {
-		// Cant create an instance of an Abstract class
+		// Can't create an instance of an Abstract class
 		//Shape shape = new Shape(); // Not valid
 		System.out.println(Shape.area(5, 10));
 		Square square = new Square();
@@ -74,19 +89,19 @@ public class WelcomeToJava {
 	}
 	
 	public static void Pterodactyl() {
-		Pterodactyl myPterodactyl = new Pterodactyl();
+		Pterodactyl myPterodactyl = new Pterodactyl("sharp", "rough");
 		myPterodactyl.hunt();
 		myPterodactyl.makeNest();
 	}
 	
 	public static void TRex() {
-		TRex myTRex = new TRex();
+		TRex myTRex = new TRex("razor", "feathery");
 		myTRex.hunt();
 		myTRex.shortArms();
 	}
 	
 	public static void Dinosaur() {
-		Dinosaur myDinosaur = new Dinosaur();
+		Dinosaur myDinosaur = new Dinosaur("razor", "scaley");
 		myDinosaur.hunt();
 		myDinosaur.setScales("leathery");
 		myDinosaur.setSharpTeeth("Dinosaurs have sharp teeth");
@@ -110,12 +125,12 @@ public class WelcomeToJava {
 	
 	public static void overrideExample() {
 		House myHouse = new House();
-		Condo myCondo = new Condo();
-		House myOtherHouse = new Condo(); //Inplicit Cast
+		//Condo myCondo = new Condo();
+		//House myOtherHouse = new Condo(); //Inplicit Cast
 		Condo myOtherCondo = (Condo) new House(); //Explicit Cast
 		//myHouse.openDoor();
 		//myCondo.openDoor();
-		myOtherHouse.openDoor();
+		//myOtherHouse.openDoor();
 	}
 	
 	public static void overloadExample() {
@@ -133,9 +148,9 @@ public class WelcomeToJava {
 	
 	public static void inheritanceExample() {
 		House house = new House();
-		Condo condo = new Condo();
-		condo.setDoors("Red Door");
-		System.out.println(condo.getDoors());
+		//Condo condo = new Condo();
+		//condo.setDoors("Red Door");
+		//System.out.println(condo.getDoors());
 		house.setDoors("Purple Door");
 		System.out.println(house.getDoors());
 		

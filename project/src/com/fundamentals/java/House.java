@@ -8,6 +8,24 @@ public class House implements HomeInterface, PlumbingInterface {
 	
 	private boolean hasStairs;
 	
+	/*Class variable not associated with a given property*/
+	protected String value = "My House";
+	
+	
+	/*Default Constructor with a println*/
+	public House() {
+		System.out.println("My default constructor");
+	}
+	
+	public House(String windows) {
+		this.windows = windows;
+	}
+	
+	public House(String windows, String doors) {
+		this.windows = windows;
+		this.doors = doors;
+	}
+	
 	public void setWindows(String value) {
 		this.windows = value;
 	}
