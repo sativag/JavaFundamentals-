@@ -8,6 +8,11 @@ import com.fundamentals.data.*;
  class - File type
  WelcomeToJava - Name of class
  */
+
+enum iceCream {
+	Vanilla, Chocolate, Strawberry, Caramel;
+}
+
 public class WelcomeToJava {
 	
 	public static final int MY_VALUE = 10;
@@ -53,8 +58,27 @@ public class WelcomeToJava {
 		//arrayListExamples();
 		//arrayListObjectExample();
 		//hashSetExample();
-		hashMapExample();
+		//hashMapExample();
+		//enumSample1();
+		exceptionExample();
 		
+	}
+	
+	public static void exceptionExample() {
+		ExceptionSample es = new ExceptionSample();
+		es.myException();
+		es.mySecondException();
+		es.myThirdException();
+	}
+	
+	public static void enumSample1() {
+		iceCream ic = iceCream.Strawberry;
+		System.out.println(ic);
+		HolidayDinner hd = new HolidayDinner();
+		hd.letsEat();
+		hd.letsChoose(Dinner.Turkey);
+		hd.letsChoose(Dinner.Ham);
+		hd.letsChoose(Dinner.PumpkinPie);
 	}
 	
 	public static <E> void hashMapExample() {
