@@ -1,7 +1,13 @@
 package com.fundamentals.java;
 
 import java.util.*;
+
+import com.designpatterns.creational.AbstractBikeFactory;
+import com.designpatterns.creational.BikeFrameInterface;
+import com.designpatterns.creational.BikeSeatInterface;
 import com.fundamentals.data.*;
+import com.designpatterns.creational.*;
+import com.designpatterns.base.*;
 
 /*
  public - Access Modifier
@@ -25,6 +31,33 @@ public class WelcomeToJava {
 	}
 
 	public static void main(String[] args) {
+		creationalPatterns();
+		
+	}
+	
+	public static void creationalPatterns() {
+		AbstractBikeFactory factory = new RoadBikeFactory();
+		BikeFrameInterface frame = factory.createFrame();
+		BikeSeatInterface seat = factory.createBikeSeat();
+		System.out.println(frame.getFrameParts());
+		System.out.println(seat.getSeatParts());
+		
+		
+		RoadBike bike = new TouringBike(new NarrowWheel(22));
+		BikeBuilder builder = new RoadBikeBuilder(bike);
+		BikeDirector director = new RoadBikeDirector();
+		BikeInterface bikeInterface = director.build(builder);
+		System.out.println(bikeInterface);
+		
+		
+		System.out.println("Generating Serial Numbers");
+		SerialNumberGenerator generator = SerialNumberGenerator.getinstance();
+		System.out.println("next serial"+ generator.getNextSerial());
+		System.out.println("next serial"+ generator.getNextSerial());
+		System.out.println("next serial"+ generator.getNextSerial());
+	}
+	
+	public static void fundamentalExamples() {
 		MY_OTHER_VALUE = 35;
 		// TODO Auto-generated method stub
 		// someMethod();
@@ -61,7 +94,6 @@ public class WelcomeToJava {
 		//hashMapExample();
 		//enumSample1();
 		exceptionExample();
-		
 	}
 	
 	public static void exceptionExample() {
