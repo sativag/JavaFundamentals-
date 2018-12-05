@@ -8,6 +8,7 @@ import com.designpatterns.creational.BikeSeatInterface;
 import com.fundamentals.data.*;
 import com.designpatterns.creational.*;
 import com.designpatterns.base.*;
+import com.designpatterns.structural.*;
 
 /*
  public - Access Modifier
@@ -31,8 +32,38 @@ public class WelcomeToJava {
 	}
 
 	public static void main(String[] args) {
-		creationalPatterns();
+		//creationalPatterns();
+		//adapterPatterns();
+		//decoratorPattern();
+		facadePattern();
+	}
+	
+	public static void facadePattern() {
+		BikeFacade facade = new BikeFacade();
+		facade.prepareForSale(new DownhillBike(new WideWheel(24)));
+	}
+	
+	public static void decoratorPattern() {
+		BikeInterface myTourBike = new TouringBike(new NarrowWheel(24));
+		System.out.println(myTourBike);
 		
+		myTourBike = new GoldFrameBike(myTourBike);
+		System.out.println(myTourBike);
+		
+		myTourBike = new CustomGrips(myTourBike);
+		System.out.println(myTourBike);
+	}
+	
+	public static void adapterPatterns() {
+		List<WheelInterface> wheels = new ArrayList<WheelInterface>();
+		UltraWheel ultraWheel = new UltraWheel(28);
+		wheels.add(new NarrowWheel(24));
+		wheels.add(new NarrowWheel(20));
+		wheels.add(new NarrowWheel(24));
+		wheels.add(new UltraWheelAdapter(ultraWheel));
+		for(WheelInterface wheel : wheels) {
+			System.out.println(wheel);
+		}
 	}
 	
 	public static void creationalPatterns() {
