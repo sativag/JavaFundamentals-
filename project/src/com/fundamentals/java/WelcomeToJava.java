@@ -8,6 +8,16 @@ import com.designpatterns.creational.BikeSeatInterface;
 import com.fundamentals.data.*;
 import com.designpatterns.creational.*;
 import com.designpatterns.base.*;
+import com.designpatterns.behavioral.BikeGearBox;
+import com.designpatterns.behavioral.BikeSpeedMonitor;
+import com.designpatterns.behavioral.BikeSpeedometer;
+import com.designpatterns.behavioral.GearBox;
+import com.designpatterns.behavioral.MountainBikeRange;
+import com.designpatterns.behavioral.RoadBikeRange;
+import com.designpatterns.behavioral.SpeedMonitor;
+import com.designpatterns.behavioral.Speedometer;
+import com.designpatterns.behavioral.WheelDiagnostics;
+import com.designpatterns.behavioral.WheelInventory;
 import com.designpatterns.structural.*;
 
 /*
@@ -35,7 +45,82 @@ public class WelcomeToJava {
 		//creationalPatterns();
 		//adapterPatterns();
 		//decoratorPattern();
-		facadePattern();
+		//facadePattern();
+		//iteratorPatterns();
+		//iteratorPatternsV2();
+		//observePattern();
+		//observerPatternV2();
+		visitorPattern();
+	}
+	
+	public static void visitorPattern() {
+		WheelInterface wheel = new WideWheel(24);
+		
+		//Run Diagnostics
+		wheel.acceptVisitor(new WheelDiagnostics());
+		
+		//Run Inventory
+		wheel.acceptVisitor(new WheelInventory());
+	}
+	
+	public static void observerPatternV2() {
+		BikeSpeedometer speedo = new BikeSpeedometer();
+		speedo.addSpeedometerListener(new BikeSpeedMonitor());
+		speedo.addSpeedometerListener(new BikeGearBox());
+		
+		//Pedal at different speeds
+		speedo.setCurrentSpeed(5);
+		speedo.setCurrentSpeed(10);
+		speedo.setCurrentSpeed(20);
+		speedo.setCurrentSpeed(30);
+		speedo.setCurrentSpeed(35);
+	}
+		
+		
+		public static void observePattern() {
+		//Creat the Speed Monitor
+		SpeedMonitor monitor = new SpeedMonitor();
+		
+		//Create a speedometer and register the monitor to it
+		Speedometer speedo = new Speedometer();
+		speedo.addObserver(monitor);
+		speedo.addObserver(new GearBox());
+		
+		//Pedal at different speeds
+		speedo.setCurrentSpeed(5);
+		speedo.setCurrentSpeed(10);
+		speedo.setCurrentSpeed(20);
+		speedo.setCurrentSpeed(30);
+		speedo.setCurrentSpeed(35);
+	}
+	
+	public static void iteratorPatternsV2() {
+		System.out.println("=== Our Road Bikes ===");
+		RoadBikeRange bikeRange = new RoadBikeRange();
+		for(BikeInterface bikes : bikeRange.getRange()) {
+			System.out.println(bikes);
+		}
+		
+		System.out.println("=== Our Mountain Bikes ===");
+		MountainBikeRange mountainBikeRange = new MountainBikeRange();
+		for(BikeInterface bikes : mountainBikeRange.getRange()) {
+			System.out.println(bikes);
+		}
+	}
+	
+	public static void iteratorPatterns() {
+		System.out.println("=== Our Road Bikes ===");
+		RoadBikeRange bikeRange = new RoadBikeRange();
+		printiterator(bikeRange.iterator());
+		System.out.println("=== Our Mountain Bikes ===");
+		MountainBikeRange mountainBikeRange = new MountainBikeRange();
+		printiterator(mountainBikeRange.iterator());
+	}
+	
+	public static void printiterator(Iterator iter) {
+		while (iter.hasNext()) {
+			System.out.println(iter.next());
+		}
 	}
 	
 	public static void facadePattern() {
